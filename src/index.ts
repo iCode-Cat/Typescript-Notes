@@ -38,3 +38,60 @@ enum Direction2 {
   Right = 'Right',
 }
 // Objects
+type User = {
+  id: number;
+  name: string;
+};
+
+const user: User = {
+  id: 1,
+  name: 'Jack',
+};
+
+// Type Assertion
+let cid: any = 1;
+// let custormerId = <number>cid;
+let custormerId = cid as number;
+
+// Functions
+// Third type indicates return type
+function addNum(x: number, y: number): number {
+  return x + y;
+}
+
+function log(message: string | number): void {
+  console.log(message);
+}
+
+// Interfaces
+interface userInterface {
+  // Prevent assign
+  readonly id: number;
+  name: string;
+  // Optional
+  age?: number;
+}
+
+const user1: userInterface = {
+  id: 1,
+  name: 'jack',
+};
+
+// Type vs Interface
+type Point = string | number;
+const p1: Point = 1;
+
+interface MathFunc {
+  (x: number, y: number): number;
+}
+
+const add: MathFunc = (x: number, y: number): number => x + y;
+const sub: MathFunc = (x: number, y: number): number => x - y;
+
+// Generics
+function getArray<T>(items: T[]): T[] {
+  return new Array().concat(items);
+}
+
+let numArray = getArray<number>([1, 2, 3, 4, 5]);
+let strArray = getArray<string>(['jack', 'jason']);

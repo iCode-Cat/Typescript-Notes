@@ -34,4 +34,32 @@ var Direction2;
     Direction2["Left"] = "Left";
     Direction2["Right"] = "Right";
 })(Direction2 || (Direction2 = {}));
-// Objects
+const user = {
+    id: 1,
+    name: 'Jack',
+};
+// Type Assertion
+let cid = 1;
+// let custormerId = <number>cid;
+let custormerId = cid;
+// Functions
+// Third type indicates return type
+function addNum(x, y) {
+    return x + y;
+}
+function log(message) {
+    console.log(message);
+}
+const user1 = {
+    id: 1,
+    name: 'jack',
+};
+const p1 = 1;
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['jack', 'jason']);
